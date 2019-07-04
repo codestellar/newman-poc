@@ -1,0 +1,93 @@
+{
+	"info": {
+		"_postman_id": "60b6c6bd-a11d-4269-b5f6-42ce61047d1e",
+		"name": "TssTraining",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetCategories",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bdf8ac43-8f31-41ec-aca1-eb8740332c38",
+						"exec": [
+							"pm.test(\"Status is 200\", function(){",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://trainingtss.azurewebsites.net/api/Blog/categories",
+					"protocol": "https",
+					"host": [
+						"trainingtss",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"Blog",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddCategory",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dc62cf98-b3ea-4721-a3fa-666316ff8457",
+						"exec": [
+							"pm.test(\"Status is 200\", function(){",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 0,\r\n  \"categoryName\": \"My Category\",\r\n  \"imageUrl\": \"test url\"\r\n}"
+				},
+				"url": {
+					"raw": "https://trainingtss.azurewebsites.net/api/Blog/categories/add",
+					"protocol": "https",
+					"host": [
+						"trainingtss",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"Blog",
+						"categories",
+						"add"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
