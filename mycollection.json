@@ -25,16 +25,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://trainingtss.azurewebsites.net/api/Blog/categories",
-					"protocol": "https",
+					"raw": "http://localhost:3000/api/categories",
+					"protocol": "http",
 					"host": [
-						"trainingtss",
-						"azurewebsites",
-						"net"
+						"localhost"
 					],
+					"port": "3000",
 					"path": [
 						"api",
-						"Blog",
 						"categories"
 					]
 				}
@@ -42,12 +40,12 @@
 			"response": []
 		},
 		{
-			"name": "AddCategory",
+			"name": "GetPosts",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "dc62cf98-b3ea-4721-a3fa-666316ff8457",
+						"id": "beea1141-6a81-47f8-9ff9-a6eb692464b1",
 						"exec": [
 							"pm.test(\"Status is 200\", function(){",
 							"    pm.response.to.have.status(200);",
@@ -58,36 +56,22 @@
 				}
 			],
 			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"id\": 0,\r\n  \"categoryName\": \"My Category\",\r\n  \"imageUrl\": \"test url\"\r\n}"
-				},
+				"method": "GET",
+				"header": [],
 				"url": {
-					"raw": "https://trainingtss.azurewebsites.net/api/Blog/categories/add",
-					"protocol": "https",
+					"raw": "http://localhost:3000/api/posts",
+					"protocol": "http",
 					"host": [
-						"trainingtss",
-						"azurewebsites",
-						"net"
+						"localhost"
 					],
+					"port": "3000",
 					"path": [
 						"api",
-						"Blog",
-						"categories",
-						"add"
+						"posts"
 					]
 				}
 			},
 			"response": []
-		}
+		}		
 	]
 }

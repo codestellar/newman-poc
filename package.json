@@ -4,8 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node main.js",
+    "test": "npx newman run  mycollection.json > testsreport.txt"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "newman": "^4.5.4"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-generator": "^4.16.1"
+  }
 }
